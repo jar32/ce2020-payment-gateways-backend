@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+
+  ce2020-payment-gateways-backend:
+    container_name: ce2020-payment-gateways-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./server/html:/usr/share/nginx/html:ro
+      - .:/usr/src/api
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=${LE_API_DOMAIN}
+      - LETSENCRYPT_HOST=${LE_API_DOMAIN}
+      - LETSENCRYPT_EMAIL=${LE_ADMIN_EMAIL}
+    networks:
+      - ce2020_gateways_default
+      - nginx-proxy
+
+networks:
+  ce2020_gateways_default:
+    name: ce2020_gateways_default
+  nginx-proxy:
+    external:
+      name: nginx-proxy

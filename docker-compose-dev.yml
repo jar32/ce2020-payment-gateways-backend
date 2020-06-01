@@ -1,0 +1,16 @@
+#the docker compose file version
+version: "3.7"
+
+services:
+  # service 1 named react-dev
+  ce2020-payment-gateways-backend:
+    # service 1 container name
+    container_name: ce2020-payment-gateways-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:8000"
+    # the mounted volumes (folders which are outside docker but being used by docker)
+    volumes:
+      - .:/usr/src/api
