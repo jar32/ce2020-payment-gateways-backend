@@ -52,8 +52,8 @@ class IndexController
         $data['DS_Merchant_Terminal'] = 50;
         $data['DS_Merchant_TransactionType'] = 0;
         $data['DS_Merchant_Titular'] = $parameters['nombre'].' '.$parameters['apellidos'];
-        $data['DS_Merchant_urlOK'] = 'http://ce2020p4/thankyou';
-        $data['DS_Merchant_urlKO'] = 'http://ce2020p4/cancel';
+        $data['DS_Merchant_urlOK'] = 'https://ce2020p4.customcarpet.es/thankyou';
+        $data['DS_Merchant_urlKO'] = 'https://ce2020p4.customcarpet.es/cancel';
         $data['DS_Merchant_Signature'] = hash(
             "sha256",
             $data['Ds_Merchant_Amount'] . ''

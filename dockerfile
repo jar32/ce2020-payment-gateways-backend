@@ -36,5 +36,5 @@ RUN composer install
 WORKDIR /usr/src/api
 
 
-CMD symfony serve --allow-http --no-tls --port=8000
+CMD symfony serve --allow-http --no-tls --port=80
 #ENTRYPOINT symfony server:start
